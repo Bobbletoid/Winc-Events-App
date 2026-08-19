@@ -3,6 +3,7 @@ import {
   Dialog,
   Field,
   Input,
+  Spinner,
   Textarea,
   VStack,
 } from "@chakra-ui/react";
@@ -96,6 +97,17 @@ export default function EditEvent({ event, open, cancel }) {
 
       <Dialog.Positioner>
         <Dialog.Content>
+          {isSubmitting && (
+            <VStack
+              position="absolute"
+              inset="0"
+              zIndex="10"
+              bg="blackAlpha.300"
+              justify="center"
+            >
+              <Spinner size="xl" />
+            </VStack>
+          )}
           <Dialog.Header fontSize="lg" fontWeight="bold">
             Edit your Event
           </Dialog.Header>
@@ -202,6 +214,7 @@ export default function EditEvent({ event, open, cancel }) {
                     variant="outline"
                     width="full"
                     type="button"
+                    disabled={isSubmitting}
                   >
                     Cancel
                   </Button>
