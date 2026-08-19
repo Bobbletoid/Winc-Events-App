@@ -3,6 +3,7 @@ import {
   Dialog,
   Field,
   Input,
+  Spinner,
   Textarea,
   VStack,
 } from "@chakra-ui/react";
@@ -62,6 +63,17 @@ export default function NewEvent({ event, cancel, finish }) {
 
       <Dialog.Positioner>
         <Dialog.Content>
+          {isSubmitting && (
+            <VStack
+              position="absolute"
+              inset="0"
+              zIndex="10"
+              bg="blackAlpha.300"
+              justify="center"
+            >
+              <Spinner size="xl" />
+            </VStack>
+          )}
           <Dialog.Header fontSize="lg" fontWeight="bold">
             Create your Event
           </Dialog.Header>
@@ -168,6 +180,7 @@ export default function NewEvent({ event, cancel, finish }) {
                     variant="outline"
                     width="full"
                     type="button"
+                    disabled="{isSubmitting}"
                   >
                     Cancel
                   </Button>
