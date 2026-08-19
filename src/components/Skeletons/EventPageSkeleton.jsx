@@ -10,8 +10,11 @@ import {
 export default function EventPageSkeleton() {
   return (
     <>
-      <VStack mx={5}>
-        <Skeleton mt={6} mb={5} alignSelf="start" w="63px" h="40px" />
+      <VStack>
+        <Box w="100%" maxW="600px" mt={6} mb={5}>
+          <Skeleton w="63px" h="40px" />
+        </Box>
+
         <Box
           borderWidth="1px"
           borderRadius="lg"
