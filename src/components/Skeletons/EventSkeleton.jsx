@@ -12,7 +12,7 @@ export default function EventSkeleton() {
 
   return (
     <SimpleGrid
-      columns={{ base: 1, md: 2, lg: 3 }}
+      columns={{ base: 1, sm: 2, md: 3 }}
       gap={6}
       maxW="1200px"
       w="100%"
